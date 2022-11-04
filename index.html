@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>experiment</title>
+	<style type="text/css">
+		bodY{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height:  100%;
+			background-color: black;
+			color:  white;
+			font-size: 20px;
+			font-family: monospace;
+		}
+
+		select{
+			margin-top: 5px;
+			width:  150px;
+			height:  50px;
+			font-size: 20px;
+			background-color: rgb(144,12,63);
+			color: white;
+			border:  none;
+			border-radius:  10px;
+			text-align: center;
+			font-family: sans-serif;
+		}
+		p{
+			width: 40%;
+			text-align: center;
+		}
+
+ </style>
+</head>
+<body>
+	<label for ='wheather'>Select the wheather</label>
+	<select id='whether'>
+		<option value=''>--select--</option>
+		<option value='sunny'>sunny</option>
+		<option value='rainy'>rainy</option>
+		<option value='snowing'>snowing</option>
+		<option value='overcast'>overcast</option>	
+	</select>
+	<p></p>
+
+	<!--some javascript logic-->
+	<script type="text/javascript">
+		let select = document.querySelector('select')
+		let output = document.querySelector('p')
+
+		select.addEventListener('change',setWheather)
+
+		function setWheather(){
+			let choice = select.value
+			if(choice === 'sunny'){
+				output.textContent = "it's sunny out there, you should put on a short, go to the beach or the park and have some ice cream"
+			}
+			else if(choice === 'rainy'){
+				output.textContent = "it is raining, when going out don't forget to get your umbrella or a rain coat and please don't stay out for too long"
+			}
+			else if(choice === 'snowing'){
+				output.textContent = "Snow is coming outside, it's best to stay indoors and enjoy a hot cup of chocolate or go and build a snow man"
+			}
+			else if(choice === 'overcast') { 
+				output.textContent = 'they is an overcast, the clouds are gray and gloomy. it may rain but am not sure if it will, but i do suggest that you get an umbrella when going out, just in case'
+			}else if(choice == ''){
+				output.textContent = 'none'
+			}
+		}
+	</script>
+</body>
+</html>
